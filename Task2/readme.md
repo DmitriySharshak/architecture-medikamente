@@ -1,4 +1,4 @@
-Анализ рисков конфиденциальности
+Анализ рисков конфиденциальности:
 
 |Риск       |As-Is                |PbD решение|
 |------------|------------------------|----------| 
@@ -8,3 +8,15 @@
 |Нарушение минимальности данных|Собирают всё подряд|Data Minimization в API|
 |Нет возможности удаления|Данные хранятся вечно|Политики удаления|
 |Передача внешним системам|Не контролируется|API Gateway + mTLS + согласие|
+
+Новые Privacy блоки:
+
+|Блок       |Назначение                |PbD решение|
+|------------|------------------------|----------| 
+|Privacy Gateway|Проверяет согласие на обработку ПДн, минимизирует собираемые данные.|Proactive not Reactive, Data Minimization|
+|Data Tagging Engine|Автоматическая классификация данных и навешивание тегов|Visibility and Transparency|
+|Policy Engine (ABAC)|Управление доступом на основе атрибутов|End-to-End Security|
+|Audit & Anomaly Detection|Логирование всех операций с конфиденциальными данными|Visibility, Accountability|
+|Anonymization Layer|Слой обезличивания для BI/ML-аналитики.|Privacy Embedded into Design|
+|Data Lake (обезличенный)|Хранилище только для обезличенных данных |Privacy Embedded into Design|
+|Encrypted Storage|Шифрование at-rest (AES-256), токенизация платежей|End-to-End Security|
